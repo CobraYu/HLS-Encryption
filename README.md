@@ -37,15 +37,15 @@ done
 
 #### Keypoint: *Initialization Vector must be the sequence numbers of mpegts files.*
 
+( *IV only appears once in the header - the first IV used by OpenSSL* )
 
-#### M3U8 Sample:( *IV only appears once in the header - the first IV used by OpenSSL* )
-
-#### 5.关键文件(HTTP LIVE STREAMING DEVELOPMENT)
+#### 5.关键文件(from "HTTP LIVE STREAMING DEVELOPMENT")
 URI参数EXT - X的密钥标记标识的密钥文件。密钥文件中包含的密钥，解密随后的媒体在播放列表中的文件必须使用。
 AES - 128加密方法使用16字节的密钥。*密钥文件的格式是简单地装在这16个字节的二进制格式的数组。*
 5.1四，AES - 128
 128位AES加密和解密时提供的相同的16字节的初始化向量（IV）。改变这四，增加密码的强度。
 当使用AES - 128加密方法，实现应为IV使用的媒体文件的序列号，当媒体文件加密或解密。*big - endian的二进制表示的序列号应放置在一个16字节的缓冲区，并填充（左）零。*
+如果加密方法是AES - 128，AES - 128 CBC encyption应适用于个别媒体文件。整个文件必须被加密。密码块链接，绝不能适用于整个媒体文件。*媒体文件的序列号，必须使用作为IV*，如5.1节所述。
 
 
 
