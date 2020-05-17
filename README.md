@@ -38,10 +38,8 @@ done
 #### Keypoint: *Initialization Vector must be the sequence numbers of mpegts files.*
 
 
-#### M3U8 Sample:(IV only appears once in the header - the first IV used by OpenSSL)
+#### M3U8 Sample:( *IV only appears once in the header - the first IV used by OpenSSL* )
 
 
-### Reference:
-1. PROTECTED HLS USING FFMPEG AND OPENSSL - https://dryize.wordpress.com/2014/04/02/protected-hls-using-ffmpeg-and-openssl/
-2. 在Nginx上為你的網站加入Https - https://medium.com/@zneuray/%E5%9C%A8nginx%E4%B8%8A%E7%82%BA%E4%BD%A0%E7%9A%84%E7%B6%B2%E7%AB%99%E5%8A%A0%E5%85%A5https-32af0223283a 
+
 
