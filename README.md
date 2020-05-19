@@ -15,6 +15,9 @@ ffmpeg -i $input -c copy -b:v 128k -b:a 48k -flags -global_header -map 0:0 -map 
 
 ffmpeg -i $input -c copy -flags -global_header -map 0:0 -map 0:1 -f segment -segment_time 10 -segment_list_size 0 -segment_list list.m3u8 -segment_format mpegts %d.ts
 
+*EXT-X-BYTERANGE*
+ffmpeg -i MP4_480_1_5MG.mp4 -c copy -flags -global_header -map 0:0 -map 0:1 -hls_flags single_file list.m3u8
+
 #### 3.Encrypt the mpegts files by OpenSSL:
 
 [#]!/bin/bash
@@ -46,6 +49,8 @@ AES - 128加密方法使用16字节的密钥。*密钥文件的格式是简单�
 128位AES加密和解密时提供的相同的16字节的初始化向量（IV）。改变这四，增加密码的强度。
 当使用AES - 128加密方法，实现应为IV使用的媒体文件的序列号，当媒体文件加密或解密。*big - endian的二进制表示的序列号应放置在一个16字节的缓冲区，并填充（左）零。*
 如果加密方法是AES - 128，AES - 128 CBC encyption应适用于个别媒体文件。整个文件必须被加密。密码块链接，绝不能适用于整个媒体文件。*媒体文件的序列号，必须使用作为IV*，如5.1节所述。
+
+#### https://tools.ietf.org/html/rfc8216#section
 
 
 
